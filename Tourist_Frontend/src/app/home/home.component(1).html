@@ -1,0 +1,75 @@
+<div class="bg-success p-2" style="--bs-bg-opacity: .2;">
+<div class="container col-md-7">
+    <h1 style="font-size: 30;">Register Tourist</h1>
+    <form (ngSubmit)="touristRegister()" #myForm="ngForm">
+        <div>
+            <label class="form-label">Id
+                <small class="text-muted">(Max. 4 digit number)</small>
+            </label>
+            <input type="text" required [(ngModel)]="tourist.id" class="form-control" id="id" name="id" ngModel
+                maxlength="4">
+        </div>
+        <div>
+            <label class="form-label">First Name
+                <small class="text-muted">(Max. 15 Alphabets)</small>
+            </label>
+            <input type="text" required [(ngModel)]="tourist.firstName" class="form-control" id="firstName"
+                name="firstName" ngModel maxlength="15">
+        </div>
+        <div>
+            <label class="form-label">Last Name
+                <small class="text-muted">(Max. 12 Alphabets)</small>
+            </label>
+            <input type="text" required [(ngModel)]="tourist.lastName" class="form-control" id="lastName"
+                name="lastName" ngModel maxlength="12">
+        </div>
+        <div>
+            <label class="form-label">Age
+                <small class="text-muted">(Max. age 90)</small>
+            </label>
+            <input type="text" required [(ngModel)]="tourist.age" class="form-control" id="age" name="age" ngModel
+                maxlength="2">
+        </div>
+        <div>
+            <label class="form-label">Place
+                <small class="text-muted">(Alphabets only)</small>
+            </label>
+            <input type="text" required [(ngModel)]="tourist.fromPlace" class="form-control" id="fromPlace"
+                name="fromPlace">
+        </div>
+        <div>
+            <label class="form-label">Days of Visit
+                <small class="text-muted">(Digits only)</small>
+            </label>
+            <input type="text" required [(ngModel)]="tourist.numberOfDaysVisit" class="form-control"
+                id="numberOfDaysVisit" name="numberOfDaysVisit">
+        </div>
+        <div>
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required
+                    [(ngModel)]="tourist.gender">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required
+                    [(ngModel)]="tourist.gender">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div *ngIf="message" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>
+                <h1>ThankYou</h1>
+            </strong> Your Data Registered Sucessfully....
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <br>
+        <button style="color:black" type="Submit" [disabled]="!myForm.form.valid" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="bg-success p-2" style="--bs-bg-opacity: .2;">
+<div class="container col-md-11">
+    <br>
+    <table class="table table-success table-striped" >
+        <thead style="font-weight: 900; color:red">
+            <tr>
+                <td>Id</td>
+                <td>First_Name</td>
+                <td>Last_Name</td>
+                <td>Age</td>
+                <td>Place</td>
+                <td>Gender</td>
+                <td>Days_of_Visit</td>
+            </tr>
+        </thead>
+        <tbody>  
+            <tr style=" color: blueviolet;" *ngFor="let items of list">
+                <td>{{items.id}}</td>
+                <td>{{items.firstName}}</td>
+                <td>{{items.lastName}}</td>
+                <td>{{items.age}}</td>
+                <td>{{items.fromPlace}}</td>
+                <td>{{items.gender}}</td>
+                <td>{{items.numberOfDaysVisit}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
